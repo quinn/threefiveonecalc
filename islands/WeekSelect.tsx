@@ -13,7 +13,8 @@ export function WeekSelect({ currentWeek }: Props) {
 			<input
 				type='hidden'
 				name='lift'
-				value={(location && new URL(location.href).searchParams.get('lift')) ??
+				value={(typeof location !== 'undefined' &&
+					new URL(location.href).searchParams.get('lift')) ||
 					'Squat'}
 			/>
 
