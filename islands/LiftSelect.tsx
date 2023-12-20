@@ -13,7 +13,8 @@ export function LiftSelect({ currentLift }: Props) {
 			<input
 				type='hidden'
 				name='week'
-				value={(location && new URL(location.href).searchParams.get('week')) ??
+				value={(typeof location !== 'undefined' &&
+					new URL(location.href).searchParams.get('week')) ||
 					'1'}
 			/>
 			<select
